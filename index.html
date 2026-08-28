@@ -2,9 +2,7 @@
 <html lang="ar" dir="rtl">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>29 AUGUST — Birthday File</title>
@@ -27,6 +25,7 @@
             font-family: Arial, sans-serif;
             overflow-x: hidden;
         }
+
 
         /* ==============================
            شاشة البداية
@@ -57,6 +56,7 @@
         .intro.hide {
             opacity: 0;
             visibility: hidden;
+            pointer-events: none;
         }
 
         .intro-content {
@@ -104,6 +104,7 @@
             transform: translateY(-3px);
         }
 
+
         /* ==============================
            الشكل العام
         ============================== */
@@ -144,6 +145,7 @@
             line-height: 1.8;
         }
 
+
         /* ==============================
            الصفحة الأولى
         ============================== */
@@ -153,36 +155,35 @@
 
             display: flex;
             align-items: center;
+            justify-content: center;
+
+            text-align: center;
 
             background:
                 radial-gradient(
-                    circle at 80% 20%,
+                    circle at 50% 30%,
                     rgba(120, 102, 220, .18),
-                    transparent 30%
+                    transparent 35%
                 ),
                 #09090d;
         }
 
-        .hero-grid {
-            display: grid;
-
-            grid-template-columns: 1.1fr .9fr;
-
-            gap: 70px;
-
-            align-items: center;
+        .hero-content {
+            width: 100%;
+            max-width: 1000px;
+            margin: auto;
         }
 
         .date {
             font-family: Georgia, serif;
 
-            font-size: clamp(70px, 13vw, 150px);
+            font-size: clamp(80px, 15vw, 160px);
 
             line-height: .8;
         }
 
         .age {
-            margin-top: 35px;
+            margin-top: 40px;
 
             color: #c7c3d0;
 
@@ -196,7 +197,7 @@
         }
 
         .hero-description {
-            margin-top: 20px;
+            margin: 20px auto 0;
 
             color: #858290;
 
@@ -205,48 +206,6 @@
             max-width: 600px;
         }
 
-        /* ==============================
-           صورته الأساسية
-        ============================== */
-
-        .main-photo {
-            width: 100%;
-            max-width: 370px;
-
-            aspect-ratio: 4 / 5;
-
-            margin: auto;
-
-            border-radius: 30px;
-
-            overflow: hidden;
-
-            background: #15151e;
-
-            border: 1px solid #292735;
-        }
-
-        .main-photo img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-        }
-
-        .placeholder {
-            height: 100%;
-
-            display: flex;
-
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            color: #555262;
-
-            padding: 30px;
-        }
 
         /* ==============================
            نبذة عن المتهم
@@ -313,6 +272,7 @@
         .bad {
             color: #ff8397;
         }
+
 
         /* ==============================
            مقياس الرخامة
@@ -381,6 +341,7 @@
             font-weight: bold;
         }
 
+
         /* ==============================
            أرشيف الصور
         ============================== */
@@ -389,17 +350,23 @@
             background: #09090d;
         }
 
+        .archive .description {
+            margin-right: 0;
+        }
+
         .photo-grid {
             display: grid;
 
             grid-template-columns: repeat(3, 1fr);
 
-            gap: 16px;
+            gap: 18px;
 
             margin-top: 55px;
         }
 
         .photo-box {
+            position: relative;
+
             width: 100%;
 
             aspect-ratio: 1 / 1;
@@ -410,7 +377,14 @@
 
             background: #15151e;
 
-            border: 1px solid #242330;
+            border: 1px solid #302e3d;
+
+            transition: .35s;
+        }
+
+        .photo-box:hover {
+            transform: translateY(-4px);
+            border-color: #62599b;
         }
 
         .photo-box img {
@@ -421,12 +395,34 @@
 
             display: block;
 
-            transition: .5s;
+            transition: transform .5s ease;
         }
 
         .photo-box:hover img {
             transform: scale(1.06);
         }
+
+        .photo-number {
+            position: absolute;
+
+            top: 12px;
+            right: 12px;
+
+            z-index: 2;
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            background: rgba(9, 9, 13, .65);
+
+            backdrop-filter: blur(5px);
+
+            color: white;
+
+            font-size: 12px;
+        }
+
 
         /* ==============================
            الأدلة
@@ -438,40 +434,57 @@
 
         .evidence-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+
+            grid-template-columns: repeat(2, 1fr);
+
             gap: 15px;
+
             margin-top: 40px;
         }
 
         .evidence-card {
-            padding: 18px;
+            padding: 22px;
+
             background: #15151e;
+
             border: 1px solid #252431;
+
             border-radius: 15px;
+
             min-height: 170px;
+
+            transition: .3s;
         }
 
         .evidence-card:hover {
             transform: translateY(-5px);
+            border-color: #4c4672;
         }
 
         .evidence-number {
             color: #8273df;
+
             font-size: 10px;
+
             letter-spacing: 1.5px;
+
             margin-bottom: 8px;
         }
 
         .evidence-card h3 {
             margin-bottom: 8px;
+
             font-size: 16px;
         }
 
         .evidence-card p {
             color: #92909c;
+
             line-height: 1.7;
+
             font-size: 12px;
         }
+
 
         /* ==============================
            الرسالة الأخيرة
@@ -523,12 +536,16 @@
             color: #a092ff;
 
             font-size: 14px;
+
+            line-height: 2;
         }
 
         .heart {
             margin-top: 25px;
 
             font-size: 32px;
+
+            color: #a092ff;
 
             animation: heartbeat 1.5s infinite;
         }
@@ -545,6 +562,7 @@
 
         }
 
+
         /* ==============================
            الفوتر
         ============================== */
@@ -559,7 +577,10 @@
             color: #555260;
 
             font-size: 11px;
+
+            line-height: 2;
         }
+
 
         /* ==============================
            الموبايل
@@ -571,22 +592,9 @@
                 padding: 80px 6%;
             }
 
-            .hero-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .main-photo {
-                margin-top: 40px;
-            }
-
             .profile-grid,
             .evidence-grid {
                 grid-template-columns: 1fr;
-                justify-items: center;
-            }
-
-            .evidence-card {
-                width: 250px;
             }
 
             .photo-grid {
@@ -595,13 +603,36 @@
                 gap: 10px;
             }
 
-            .photo-box {
-                aspect-ratio: 1 / 1;
-            }
-
             .meter-label {
                 font-size: 10px;
+
                 gap: 5px;
+            }
+
+            .age {
+                font-size: 16px;
+            }
+
+        }
+
+
+        @media (max-width: 450px) {
+
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .photo-box {
+                border-radius: 15px;
+            }
+
+            .photo-number {
+                top: 7px;
+                right: 7px;
+
+                padding: 3px 7px;
+
+                font-size: 10px;
             }
 
         }
@@ -610,7 +641,11 @@
 
 </head>
 
+
 <body>
+
+
+    <!-- شاشة البداية -->
 
     <div class="intro" id="intro">
 
@@ -626,79 +661,72 @@
             </h1>
 
             <p>
+
                 تم إنشاء الموقع ده من غير ما ناخد موافقته،
                 <br>
+
                 وأي اعتراضات تُهمل.
+
             </p>
 
             <button
                 class="enter-btn"
                 onclick="enterSite()"
             >
+
                 دخول إلى الملف 🫡
+
             </button>
 
         </div>
 
     </div>
 
+
+
+    <!-- الصفحة الأولى -->
+
     <section class="hero">
 
         <div class="container">
 
-            <div class="hero-grid">
+            <div class="hero-content">
 
-                <div>
+                <div class="label">
+                    BIRTHDAY FILE
+                </div>
 
-                    <div class="label">
-                        BIRTHDAY FILE
-                    </div>
+                <div class="date">
 
-                    <div class="date">
-                        29
-                        <br>
-                        AUGUST
-                    </div>
-
-                    <div class="age">
-
-                        <strong>20</strong>
-
-                        سنة من وجود المواطن المذكور
-
-                    </div>
-
-                    <p class="hero-description">
-                        «يوم ميلاد المواطن المذكور أعلاه»
-                    </p>
+                    29
+                    <br>
+                    AUGUST
 
                 </div>
 
-                <div class="main-photo">
+                <div class="age">
 
-                    <img
-                        src="f1.jpeg"
-                        alt="صورته"
-                        onerror="
-                            this.style.display='none';
-                            this.nextElementSibling.style.display='flex';
-                        "
-                    >
+                    <strong>20</strong>
 
-                    <div
-                        class="placeholder"
-                        style="display:none;"
-                    >
-                        حطي هنا صورة مميزة ليه
-                    </div>
+                    سنة من وجود المواطن المذكور
 
                 </div>
+
+                <p class="hero-description">
+
+                    «يوم ميلاد المواطن المذكور أعلاه»
+
+                </p>
 
             </div>
 
         </div>
 
     </section>
+
+
+
+    <!-- نبذة عن المتهم -->
 
     <section class="profile">
 
@@ -712,7 +740,9 @@
                 «نبذة عن المتهم»
             </h2>
 
+
             <div class="profile-grid">
+
 
                 <div class="card">
 
@@ -728,6 +758,7 @@
 
                     </div>
 
+
                     <div class="trait">
 
                         <span>
@@ -739,6 +770,7 @@
                         </span>
 
                     </div>
+
 
                     <div class="trait">
 
@@ -752,6 +784,7 @@
 
                     </div>
 
+
                     <div class="trait">
 
                         <span>
@@ -763,6 +796,7 @@
                         </span>
 
                     </div>
+
 
                     <div class="trait">
 
@@ -778,6 +812,8 @@
 
                 </div>
 
+
+
                 <div class="card">
 
                     <h3>
@@ -785,9 +821,12 @@
                     </h3>
 
                     <p class="description">
+
                         بعد فترة محترمة من المراقبة،
                         قدرنا نوصل للنتيجة دي.
+
                     </p>
+
 
                     <div class="meter-label">
 
@@ -809,23 +848,32 @@
 
                     </div>
 
+
                     <div class="meter">
 
                         <div class="meter-fill"></div>
 
                     </div>
 
+
                     <div class="meter-result">
+
                         النتيجة: هو.
+
                     </div>
 
                 </div>
+
 
             </div>
 
         </div>
 
     </section>
+
+
+
+    <!-- أرشيف الصور -->
 
     <section class="archive">
 
@@ -840,18 +888,28 @@
             </h2>
 
             <p class="description">
+
                 شوية صور من الملف،
                 اتجابوا من غير ما المتهم يعرف...
                 أو عرف ومطنش، الله أعلم.
+
             </p>
 
             <p class="small-note">
+
                 وده طبعًا ما يمنعش إن التصوير كان بووم الطخ.
+
             </p>
+
 
             <div class="photo-grid">
 
+
                 <div class="photo-box">
+
+                    <span class="photo-number">
+                        صورة 1
+                    </span>
 
                     <img
                         src="f1.jpeg"
@@ -860,7 +918,12 @@
 
                 </div>
 
+
                 <div class="photo-box">
+
+                    <span class="photo-number">
+                        صورة 2
+                    </span>
 
                     <img
                         src="f2.jpeg"
@@ -869,7 +932,12 @@
 
                 </div>
 
+
                 <div class="photo-box">
+
+                    <span class="photo-number">
+                        صورة 3
+                    </span>
 
                     <img
                         src="f3.jpeg"
@@ -878,7 +946,12 @@
 
                 </div>
 
+
                 <div class="photo-box">
+
+                    <span class="photo-number">
+                        صورة 4
+                    </span>
 
                     <img
                         src="f4.jpeg"
@@ -887,7 +960,12 @@
 
                 </div>
 
+
                 <div class="photo-box">
+
+                    <span class="photo-number">
+                        صورة 5
+                    </span>
 
                     <img
                         src="f5.jpeg"
@@ -896,7 +974,12 @@
 
                 </div>
 
+
                 <div class="photo-box">
+
+                    <span class="photo-number">
+                        صورة 6
+                    </span>
 
                     <img
                         src="f6.jpeg"
@@ -905,11 +988,16 @@
 
                 </div>
 
+
             </div>
 
         </div>
 
     </section>
+
+
+
+    <!-- الأدلة -->
 
     <section class="evidence">
 
@@ -923,7 +1011,9 @@
                 الأدلة ضده.
             </h2>
 
+
             <div class="evidence-grid">
+
 
                 <div class="evidence-card">
 
@@ -936,12 +1026,15 @@
                     </h3>
 
                     <p>
+
                         الرخامة؟
                         دي مش محتاجة إثبات أصلًا،
                         دي حاجة موثقة رسميًا من زمان.
+
                     </p>
 
                 </div>
+
 
                 <div class="evidence-card">
 
@@ -954,12 +1047,15 @@
                     </h3>
 
                     <p>
+
                         دمك خفيف
                         والمشكلة إنك عارف ده كويس
                         وبتستغل الموضوع علينا.
+
                     </p>
 
                 </div>
+
 
                 <div class="evidence-card">
 
@@ -972,11 +1068,14 @@
                     </h3>
 
                     <p>
+
                         بتعرف تدخل في الكلام مع أي حد
-                        كأنك تعرفه من سنين
+                        كأنك تعرفه من سنين.
+
                     </p>
 
                 </div>
+
 
                 <div class="evidence-card">
 
@@ -989,12 +1088,15 @@
                     </h3>
 
                     <p>
+
                         أهو رغم كل الرخامة دي،
                         لازم نعترف إن دي نقطة تتحسب
                         عشان نبقى منصفين يعني.
+
                     </p>
 
                 </div>
+
 
             </div>
 
@@ -1002,19 +1104,28 @@
 
     </section>
 
+
+
+    <!-- الرسالة الأخيرة -->
+
     <section class="final">
 
         <div class="container">
 
             <div class="final-content">
 
+
                 <div class="label">
                     FINAL REPORT
                 </div>
 
+
                 <h2 class="final-title">
+
                     كل سنة وإنت طيب.
+
                 </h2>
+
 
                 <p class="message">
 
@@ -1041,11 +1152,14 @@
                     <br>
 
                     <strong>
+
                         مش كتير يعني،
                         عشان متتغيرش علينا. 😂
+
                     </strong>
 
                 </p>
+
 
                 <div class="signature">
 
@@ -1054,15 +1168,19 @@
 
                 </div>
 
+
                 <div class="heart">
                     ♡
                 </div>
+
 
             </div>
 
         </div>
 
     </section>
+
+
 
     <footer>
 
@@ -1073,6 +1191,8 @@
         Happy Birthday Nour
 
     </footer>
+
+
 
     <script>
 
@@ -1090,6 +1210,7 @@
         document.body.style.overflow = "hidden";
 
     </script>
+
 
 </body>
 
