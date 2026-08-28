@@ -2,7 +2,9 @@
 <html lang="ar" dir="rtl">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>29 AUGUST — Birthday File</title>
@@ -155,35 +157,36 @@
 
             display: flex;
             align-items: center;
-            justify-content: center;
-
-            text-align: center;
 
             background:
                 radial-gradient(
-                    circle at 50% 30%,
+                    circle at 80% 20%,
                     rgba(120, 102, 220, .18),
-                    transparent 35%
+                    transparent 30%
                 ),
                 #09090d;
         }
 
-        .hero-content {
-            width: 100%;
-            max-width: 1000px;
-            margin: auto;
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns: 1.1fr .9fr;
+
+            gap: 70px;
+
+            align-items: center;
         }
 
         .date {
             font-family: Georgia, serif;
 
-            font-size: clamp(80px, 15vw, 160px);
+            font-size: clamp(70px, 13vw, 150px);
 
             line-height: .8;
         }
 
         .age {
-            margin-top: 40px;
+            margin-top: 35px;
 
             color: #c7c3d0;
 
@@ -197,13 +200,44 @@
         }
 
         .hero-description {
-            margin: 20px auto 0;
+            margin-top: 20px;
 
             color: #858290;
 
             line-height: 2;
 
             max-width: 600px;
+        }
+
+
+        /* ==============================
+           الصورة الكبيرة في البداية
+        ============================== */
+
+        .main-photo {
+            width: 100%;
+            max-width: 370px;
+
+            aspect-ratio: 4 / 5;
+
+            margin: auto;
+
+            border-radius: 30px;
+
+            overflow: hidden;
+
+            background: #15151e;
+
+            border: 1px solid #292735;
+        }
+
+        .main-photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
         }
 
 
@@ -350,10 +384,6 @@
             background: #09090d;
         }
 
-        .archive .description {
-            margin-right: 0;
-        }
-
         .photo-grid {
             display: grid;
 
@@ -384,6 +414,7 @@
 
         .photo-box:hover {
             transform: translateY(-4px);
+
             border-color: #62599b;
         }
 
@@ -458,6 +489,7 @@
 
         .evidence-card:hover {
             transform: translateY(-5px);
+
             border-color: #4c4672;
         }
 
@@ -592,6 +624,14 @@
                 padding: 80px 6%;
             }
 
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-photo {
+                margin-top: 40px;
+            }
+
             .profile-grid,
             .evidence-grid {
                 grid-template-columns: 1fr;
@@ -607,10 +647,6 @@
                 font-size: 10px;
 
                 gap: 5px;
-            }
-
-            .age {
-                font-size: 16px;
             }
 
         }
@@ -645,7 +681,9 @@
 <body>
 
 
-    <!-- شاشة البداية -->
+    <!-- ==============================
+         شاشة البداية
+    ============================== -->
 
     <div class="intro" id="intro">
 
@@ -684,39 +722,60 @@
 
 
 
-    <!-- الصفحة الأولى -->
+    <!-- ==============================
+         الصفحة الأولى
+    ============================== -->
 
     <section class="hero">
 
         <div class="container">
 
-            <div class="hero-content">
+            <div class="hero-grid">
 
-                <div class="label">
-                    BIRTHDAY FILE
+
+                <div>
+
+                    <div class="label">
+                        BIRTHDAY FILE
+                    </div>
+
+                    <div class="date">
+
+                        29
+                        <br>
+                        AUGUST
+
+                    </div>
+
+                    <div class="age">
+
+                        <strong>20</strong>
+
+                        سنة من وجود المواطن المذكور
+
+                    </div>
+
+                    <p class="hero-description">
+
+                        «يوم ميلاد المواطن المذكور أعلاه»
+
+                    </p>
+
                 </div>
 
-                <div class="date">
 
-                    29
-                    <br>
-                    AUGUST
 
-                </div>
+                <!-- الصورة الجديدة فوق -->
 
-                <div class="age">
+                <div class="main-photo">
 
-                    <strong>20</strong>
-
-                    سنة من وجود المواطن المذكور
+                    <img
+                        src="nour.jpeg"
+                        alt="Nour"
+                    >
 
                 </div>
 
-                <p class="hero-description">
-
-                    «يوم ميلاد المواطن المذكور أعلاه»
-
-                </p>
 
             </div>
 
@@ -726,7 +785,9 @@
 
 
 
-    <!-- نبذة عن المتهم -->
+    <!-- ==============================
+         نبذة عن المتهم
+    ============================== -->
 
     <section class="profile">
 
@@ -873,7 +934,9 @@
 
 
 
-    <!-- أرشيف الصور -->
+    <!-- ==============================
+         أرشيف الصور
+    ============================== -->
 
     <section class="archive">
 
@@ -905,6 +968,8 @@
             <div class="photo-grid">
 
 
+                <!-- الصورة 1 -->
+
                 <div class="photo-box">
 
                     <span class="photo-number">
@@ -918,6 +983,8 @@
 
                 </div>
 
+
+                <!-- الصورة 2 -->
 
                 <div class="photo-box">
 
@@ -933,6 +1000,8 @@
                 </div>
 
 
+                <!-- الصورة 3 -->
+
                 <div class="photo-box">
 
                     <span class="photo-number">
@@ -946,6 +1015,8 @@
 
                 </div>
 
+
+                <!-- الصورة 4 -->
 
                 <div class="photo-box">
 
@@ -961,6 +1032,8 @@
                 </div>
 
 
+                <!-- الصورة 5 -->
+
                 <div class="photo-box">
 
                     <span class="photo-number">
@@ -974,6 +1047,8 @@
 
                 </div>
 
+
+                <!-- الصورة 6 -->
 
                 <div class="photo-box">
 
@@ -997,7 +1072,9 @@
 
 
 
-    <!-- الأدلة -->
+    <!-- ==============================
+         الأدلة
+    ============================== -->
 
     <section class="evidence">
 
@@ -1106,7 +1183,9 @@
 
 
 
-    <!-- الرسالة الأخيرة -->
+    <!-- ==============================
+         الرسالة الأخيرة
+    ============================== -->
 
     <section class="final">
 
@@ -1181,6 +1260,10 @@
     </section>
 
 
+
+    <!-- ==============================
+         الفوتر
+    ============================== -->
 
     <footer>
 
