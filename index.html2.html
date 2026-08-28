@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>29 AUGUST — Birthday File</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #09090d;
+            color: #f5f2ec;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+
+        /* ==============================
+           شاشة البداية
+        ============================== */
+
+        .intro {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(126, 107, 225, 0.18),
+                    transparent 45%
+                ),
+                #09090d;
+
+            transition: 1s ease;
+        }
+
+        .intro.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .intro-content {
+            width: min(90%, 600px);
+        }
+
+        .classified {
+            color: #a293ff;
+            font-size: 12px;
+            letter-spacing: 5px;
+            margin-bottom: 25px;
+        }
+
+        .intro h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(65px, 14vw, 130px);
+            line-height: .85;
+            margin-bottom: 30px;
+        }
+
+        .intro p {
+            color: #9996a5;
+            line-height: 2;
+            margin-bottom: 35px;
+        }
+
+        .enter-btn {
+            padding: 14px 35px;
+
+            border: 1px solid #7768dc;
+            border-radius: 50px;
+
+            background: transparent;
+            color: white;
+
+            font-size: 15px;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .enter-btn:hover {
+            background: #7768dc;
+            transform: translateY(-3px);
+        }
+
+
+        /* ==============================
+           الشكل العام
+        ============================== */
+
+        section {
+            padding: 110px 7%;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .label {
+            color: #9d8eff;
+            font-size: 12px;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .title {
+            font-family: Georgia, serif;
+            font-size: clamp(42px, 7vw, 75px);
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .description {
+            max-width: 700px;
+            color: #9996a5;
+            line-height: 2;
+        }
+
+        .small-note {
+            margin-top: 8px;
+            color: #666372;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+
+        /* ==============================
+           الصفحة الأولى
+        ============================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(120, 102, 220, .18),
+                    transparent 30%
+                ),
+                #09090d;
+        }
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns: 1.1fr .9fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .date {
+            font-family: Georgia, serif;
+
+            font-size: clamp(70px, 13vw, 150px);
+
+            line-height: .8;
+        }
+
+        .age {
+            margin-top: 35px;
+
+            color: #c7c3d0;
+
+            font-size: 20px;
+        }
+
+        .age strong {
+            color: #a394ff;
+
+            font-size: 40px;
+        }
+
+        .hero-description {
+            margin-top: 20px;
+
+            color: #858290;
+
+            line-height: 2;
+
+            max-width: 600px;
+        }
+
+
+        /* ==============================
+           صورته الأساسية
+        ============================== */
+
+        .main-photo {
+            width: 100%;
+            max-width: 370px;
+
+            aspect-ratio: 4 / 5;
+
+            margin: auto;
+
+            border-radius: 30px;
+
+            overflow: hidden;
+
+            background: #15151e;
+
+            border: 1px solid #292735;
+        }
+
+        .main-photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .placeholder {
+            height: 100%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: #555262;
+
+            padding: 30px;
+        }
+
+
+        /* ==============================
+           نبذة عن المتهم
+        ============================== */
+
+        .profile {
+            background: #0e0e14;
+        }
+
+        .profile-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+
+            margin-top: 55px;
+        }
+
+        .card {
+            background: #15151e;
+
+            border: 1px solid #252431;
+
+            border-radius: 25px;
+
+            padding: 30px;
+
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+
+            border-color: #4c4672;
+        }
+
+        .card h3 {
+            margin-bottom: 20px;
+        }
+
+        .trait {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 15px 0;
+
+            border-bottom: 1px solid #282631;
+
+            color: #a19eac;
+        }
+
+        .trait:last-child {
+            border-bottom: none;
+        }
+
+        .good {
+            color: #a7d8b6;
+        }
+
+        .bad {
+            color: #ff8397;
+        }
+
+
+        /* ==============================
+           مقياس الرخامة
+        ============================== */
+
+        .meter-label {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-top: 30px;
+
+            margin-bottom: 10px;
+
+            color: #9996a5;
+
+            font-size: 13px;
+        }
+
+        .meter {
+            width: 100%;
+
+            height: 12px;
+
+            background: #282631;
+
+            border-radius: 30px;
+
+            overflow: hidden;
+        }
+
+        .meter-fill {
+            width: 95%;
+
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #7768dc,
+                    #ff7890
+                );
+
+            border-radius: 30px;
+
+            animation: meter 2s ease;
+        }
+
+        @keyframes meter {
+
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 95%;
+            }
+
+        }
+
+        .meter-result {
+            margin-top: 15px;
+
+            color: #ff8397;
+
+            font-weight: bold;
+        }
+
+
+        /* ==============================
+           أرشيف الصور
+        ============================== */
+
+        .archive {
+            background: #09090d;
+        }
+
+        .photo-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 16px;
+
+            margin-top: 55px;
+        }
+
+        .photo-box {
+            width: 100%;
+
+            aspect-ratio: 1 / 1;
+
+            overflow: hidden;
+
+            border-radius: 22px;
+
+            background: #15151e;
+
+            border: 1px solid #242330;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition: .5s;
+        }
+
+        .photo-box:hover img {
+            transform: scale(1.06);
+        }
+
+
+        /* ==============================
+           الأدلة
+        ===========================
+        /* ==============================
+   الأدلة
+============================== */
+
+.evidence {
+    background: #0e0e14;
+}
+
+.evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.evidence-card {
+    padding: 18px;
+    background: #15151e;
+    border: 1px solid #252431;
+    border-radius: 15px;
+    min-height: 170px;
+}
+
+.evidence-card:hover {
+    transform: translateY(-5px);
+}
+
+.evidence-number {
+    color: #8273df;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.evidence-card h3 {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.evidence-card p {
+    color: #92909c;
+    line-height: 1.7;
+    font-size: 12px;
+}
+
+
+
+    
+
+        /* ==============================
+           الرسالة الأخيرة
+        ============================== */
+
+        .final {
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(120, 102, 220, .16),
+                    transparent 45%
+                ),
+                #09090d;
+        }
+
+        .final-content {
+            max-width: 760px;
+
+            margin: auto;
+        }
+
+        .final-title {
+            font-family: Georgia, serif;
+
+            font-size: clamp(48px, 8vw, 85px);
+
+            margin-bottom: 35px;
+        }
+
+        .message {
+            color: #aaa7b4;
+
+            font-size: 17px;
+
+            line-height: 2.3;
+        }
+
+        .signature {
+            margin-top: 45px;
+
+            color: #a092ff;
+
+            font-size: 14px;
+        }
+
+        .heart {
+            margin-top: 25px;
+
+            font-size: 32px;
+
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.18);
+            }
+
+        }
+
+
+        /* ==============================
+           الفوتر
+        ============================== */
+
+        footer {
+            padding: 30px;
+
+            text-align: center;
+
+            background: #09090d;
+
+            color: #555260;
+
+            font-size: 11px;
+        }
+
+
+        /* ==============================
+           الموبايل
+        ============================== */
+
+        @media (max-width: 800px) {
+
+            section {
+                padding: 80px 6%;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .main-photo {
+                margin-top: 40px;
+            }
+
+            .profile-grid,
+            .evidence-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .evidence-card {
+                width: 250px;
+            }
+
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 10px;
+            }
+
+            .photo-box {
+                aspect-ratio: 1 / 1;
+            }
+
+            .meter-label {
+                font-size: 10px;
+                gap: 5px;
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+  
+
+    <div class="intro" id="intro">
+
+        <div class="intro-content">
+
+            <div class="classified">
+                CLASSIFIED FILE
+            </div>
+
+            <h1>
+                29<br>
+                AUGUST
+            </h1>
+
+            <p>
+
+                تم إنشاء الموقع ده من غير ما ناخد موافقته،
+                <br>
+
+                وأي اعتراضات تُهمل.
+
+            </p>
+
+            <button
+                class="enter-btn"
+                onclick="enterSite()"
+            >
+
+                دخول إلى الملف 🫡
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+
+    <section class="hero">
+
+        <div class="container">
+
+            <div class="hero-grid">
+
+
+                <div>
+
+                    <div class="label">
+                        BIRTHDAY FILE
+                    </div>
+
+                    <div class="date">
+
+                        29
+                        <br>
+                        AUGUST
+
+                    </div>
+
+                    <div class="age">
+
+                        <strong>20</strong>
+
+                        سنة من وجود المواطن المذكور
+
+                    </div>
+
+                    <p class="hero-description">
+
+                        «يوم ميلاد المواطن المذكور أعلاه»
+
+                    </p>
+
+                </div>
+
+
+
+                
+                <div class="main-photo">
+
+                    <img
+                        src="هو.jpeg"
+                        alt="صورته"
+                        onerror="
+                            this.style.display='none';
+                            this.nextElementSibling.style.display='flex';
+                        "
+                    >
+
+                    <div
+                        class="placeholder"
+                        style="display:none;"
+                    >
+
+                        حطي هنا صورة مميزة ليه
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+   
+
+    <section class="profile">
+
+        <div class="container">
+
+            <div class="label">
+                SUBJECT PROFILE
+            </div>
+
+            <h2 class="title">
+                «نبذة عن المتهم»
+            </h2>
+
+
+            <div class="profile-grid">
+
+
+                <div class="card">
+
+                    <div class="trait">
+
+                        <span>
+                            اجتماعي
+                        </span>
+
+                        <span class="good">
+                            ✅
+                        </span>
+
+                    </div>
+
+
+                    <div class="trait">
+
+                        <span>
+                            واعي
+                        </span>
+
+                        <span class="good">
+                            ✅
+                        </span>
+
+                    </div>
+
+
+                    <div class="trait">
+
+                        <span>
+                            مسؤول
+                        </span>
+
+                        <span>
+                            للأسف ✅
+                        </span>
+
+                    </div>
+
+
+                    <div class="trait">
+
+                        <span>
+                            دمك خفيف
+                        </span>
+
+                        <span>
+                            أحيانًا.
+                        </span>
+
+                    </div>
+
+
+                    <div class="trait">
+
+                        <span>
+                            رخم
+                        </span>
+
+                        <span class="bad">
+                            بشكل موثق رسميًا. ❌❌❌
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="card">
+
+                    <h3>
+                        مقياس الرخامة
+                    </h3>
+
+                    <p class="description">
+
+                        بعد فترة محترمة من المراقبة،
+                        قدرنا نوصل للنتيجة دي.
+
+                    </p>
+
+
+                    <div class="meter-label">
+
+                        <span>
+                            طبيعي
+                        </span>
+
+                        <span>
+                            رخم شوية
+                        </span>
+
+                        <span>
+                            رخم جدًا
+                        </span>
+
+                        <span>
+                            هو
+                        </span>
+
+                    </div>
+
+
+                    <div class="meter">
+
+                        <div class="meter-fill"></div>
+
+                    </div>
+
+
+                    <div class="meter-result">
+
+                        النتيجة: هو.
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    
+
+    <section class="archive">
+
+        <div class="container">
+
+            <div class="label">
+                PHOTO ARCHIVE
+            </div>
+
+            <h2 class="title">
+                أرشيف الأدلة.
+            </h2>
+
+            <p class="description">
+
+                شوية صور من الملف،
+                اتجابوا من غير ما المتهم يعرف...
+                أو عرف ومطنش، الله أعلم.
+
+            </p>
+
+            <p class="small-note">
+
+                وده طبعًا ما يمنعش إن التصوير كان بووم الطخ.
+
+            </p>
+
+
+        
+            <div class="photo-grid">
+
+
+                <div class="photo-box">
+
+                    <img
+                        src="واحد.jpeg"
+                        alt="صورة 1"
+                    >
+
+                </div>
+
+
+                <div class="photo-box">
+
+                    <img
+                        src="photo2.jpg"
+                        alt="صورة 2"
+                    >
+
+                </div>
+
+
+                <div class="photo-box">
+
+                    <img
+                        src="photo3.jpg"
+                        alt="صورة 3"
+                    >
+
+                </div>
+
+
+                <div class="photo-box">
+
+                    <img
+                        src="photo4.jpg"
+                        alt="صورة 4"
+                    >
+
+                </div>
+
+
+                <div class="photo-box">
+
+                    <img
+                        src="photo5.jpg"
+                        alt="صورة 5"
+                    >
+
+                </div>
+
+
+                <div class="photo-box">
+
+                    <img
+                        src="photo6.jpg"
+                        alt="صورة 6"
+                    >
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+   
+    <section class="evidence">
+
+        <div class="container">
+
+            <div class="label">
+                OFFICIAL REPORT
+            </div>
+
+            <h2 class="title">
+                الأدلة ضده.
+            </h2>
+
+
+            <div class="evidence-grid">
+
+
+                <div class="evidence-card">
+
+                    <div class="evidence-number">
+                        EVIDENCE #01
+                    </div>
+
+                    <h3>
+                        الرخامة.
+                    </h3>
+
+                    <p>
+
+                        الرخامة؟
+                        دي مش محتاجة إثبات أصلًا،
+                        دي حاجة موثقة رسميًا من زمان.
+
+                    </p>
+
+                </div>
+
+
+                <div class="evidence-card">
+
+                    <div class="evidence-number">
+                        EVIDENCE #02
+                    </div>
+
+                    <h3>
+                        دمه خفيف.
+                    </h3>
+
+                    <p>
+
+                        دمك خفيف 
+                        والمشكلة إنك عارف ده كويس
+                        وبتستغل الموضوع علينا.
+
+                    </p>
+
+                </div>
+
+
+                <div class="evidence-card">
+
+                    <div class="evidence-number">
+                        EVIDENCE #03
+                    </div>
+
+                    <h3>
+                        اجتماعي موت.
+                    </h3>
+
+                    <p>
+
+                        ي
+                        بتعرف تدخل في الكلام مع أي حد
+                        كأنك تعرفه من سنين
+
+                    </p>
+
+                </div>
+
+
+                <div class="evidence-card">
+
+                    <div class="evidence-number">
+                        EVIDENCE #04
+                    </div>
+
+                    <h3>
+                        واعي ومسؤول.
+                    </h3>
+
+                    <p>
+
+                        أهو رغم كل الرخامة دي،
+                       لازم نعترف إن دي نقطة تتحسب 
+                        عشان نبقى منصفين يعني.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    
+
+
+    <section class="final">
+
+        <div class="container">
+
+            <div class="final-content">
+
+
+                <div class="label">
+                    FINAL REPORT
+                </div>
+
+
+                <h2 class="final-title">
+
+                    كل سنة وإنت طيب.
+
+                </h2>
+
+
+                <p class="message">
+
+                    بعيدًا عن كل الرخامة والهزار،
+                    أنا فعلًا مبسوطة إن تعليق عشوائي على تيك توك
+                    خلاني أعرفك.
+
+                    <br><br>
+
+                    يمكن إحنا بدأنا كاتنين غرب،
+                    بس مع الوقت بقيت من الناس اللي بحب أشاركهم
+                    تفاصيل يومي وأسمع تفاصيل يومهم.
+
+                    <br><br>
+
+                    فـ كل سنة وإنت طيب،
+                    وإن شاء الله السنة الجديدة تكون حلوة عليك
+                    وتحقق فيها كل اللي نفسك فيه…
+
+                    <br><br>
+
+                    وحاول تقلل رخامة شوية.
+
+                    <br>
+
+                    <strong>
+
+                        مش كتير يعني،
+                        عشان متتغيرش علينا. 😂
+
+                    </strong>
+
+                </p>
+
+
+                <div class="signature">
+
+                    — من الشخص اللي قرر يعمل لك موقع كامل
+                    بدل ما يقولك "كل سنة وإنت طيب" وخلاص.
+
+                </div>
+
+
+                <div class="heart">
+                    ♡
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <footer>
+
+        29 AUGUST • 20
+
+        <br>
+
+        Happy Birthday Nour
+
+    </footer>
+
+
+
+    <script>
+
+        function enterSite() {
+
+            document
+                .getElementById("intro")
+                .classList
+                .add("hide");
+
+            document.body.style.overflow = "auto";
+
+        }
+
+        document.body.style.overflow = "hidden";
+
+
+
+    </script>
+
+
+</body>
+
+</html>
